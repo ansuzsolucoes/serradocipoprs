@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/serradocipoprs/static/js/main.6cf15dd0.chunk.js",
+    "main.js.map": "/serradocipoprs/static/js/main.6cf15dd0.chunk.js.map",
+    "runtime-main.js": "/serradocipoprs/static/js/runtime-main.2afa5cb2.js",
+    "runtime-main.js.map": "/serradocipoprs/static/js/runtime-main.2afa5cb2.js.map",
+    "static/js/2.c29006fa.chunk.js": "/serradocipoprs/static/js/2.c29006fa.chunk.js",
+    "static/js/2.c29006fa.chunk.js.map": "/serradocipoprs/static/js/2.c29006fa.chunk.js.map",
+    "index.html": "/serradocipoprs/index.html",
+    "static/js/2.c29006fa.chunk.js.LICENSE.txt": "/serradocipoprs/static/js/2.c29006fa.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2afa5cb2.js",
+    "static/js/2.c29006fa.chunk.js",
+    "static/js/main.6cf15dd0.chunk.js"
+  ]
+}
