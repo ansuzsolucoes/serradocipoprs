@@ -18,7 +18,24 @@ const TituloPagina = styled.h1`
   font-style: italic;
   color: rgba(255,255,255,1);
   text-shadow: 1px 1px 1px rgba(133,56,155,1);
-`
+`;
+const Header = styled.div `
+
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+`;
+
+const NavigationBar = styled.nav `
+flex-direction: row;
+align-items: center;
+justify-content: center;
+width: 100%;
+height: 30px;
+`;
 
 
 function App() {
@@ -28,28 +45,23 @@ function App() {
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
     </style>
       <Router>
-        <div>
+        <Header>
           <TituloPagina>Pousada Recanto do Sossego</TituloPagina>
-          <nav>
-            <ul>
-              <li>
+          <br/>
+          <NavigationBar>
+
                 <Link to="/">A Pousada</Link>
-              </li>
-              <li>
+
                 <Link to="/sobre">Sobre Nós</Link>
-              </li>
-              <li>
+
                 <Link to="/instalacoes">Instalações</Link>
-              </li>
-              <li>
+
                 <Link to="/localizacao">Localização</Link>
-              </li>
-              <li>
+
                 <Link to="/contato">Contato</Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
+
+          </NavigationBar>
+        </Header>
         <Switch>
           <Route path="/sobre">
             <Sobre />
