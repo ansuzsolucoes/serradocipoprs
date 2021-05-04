@@ -3,9 +3,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  NavLink
 } from "react-router-dom";
 import styled from 'styled-components';
+import "./App.css";
 
 const TituloPagina = styled.h1`
   font-family: "Pacifico", "Open Sans","Helvetica Neue", "Helvetica", "sans-serif";
@@ -22,20 +23,39 @@ const TituloPagina = styled.h1`
 const Header = styled.div `
 
   width: 100%;
+  min-height: 527px;
   justify-content: center;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-}
+
 `;
 
 const NavigationBar = styled.nav `
+display: inline-flex;
 flex-direction: row;
 align-items: center;
 justify-content: center;
+min-height:61px;
 width: 100%;
-height: 30px;
+background-color: rgba(33,165,58,0.8);
+border-bottom-color: rgba(70,215,71,1);
+border-bottom-style: solid;
+border-bottom-width: 6px;
+margin: 0px;
+transition: all 0.1s ease-in-out;
+padding: 0px;
 `;
+
+const NavigationLink = styled(NavLink)`
+color: #fff;
+text-decoration: none;
+padding: 25px 15px 25px 15px;
+margin: 0;
+font-family: "Roboto", "Open Sans", "Helvetica Neue", "Helvetica", "sans-serif";
+font-size: 20px;
+`;
+
 
 
 function App() {
@@ -50,15 +70,15 @@ function App() {
           <br/>
           <NavigationBar>
 
-                <Link to="/">A Pousada</Link>
+                <NavigationLink className="NavLink" exact="true" activeClassName="NavLinkSelected" to="/" >A Pousada</NavigationLink>
 
-                <Link to="/sobre">Sobre Nós</Link>
+                <NavigationLink className="NavLink" activeClassName="NavLinkSelected" to="/sobre">Sobre Nós</NavigationLink>
 
-                <Link to="/instalacoes">Instalações</Link>
+                <NavigationLink className="NavLink" activeClassName="NavLinkSelected" to="/instalacoes">Instalações</NavigationLink>
 
-                <Link to="/localizacao">Localização</Link>
+                <NavigationLink className="NavLink" activeClassName="NavLinkSelected" to="/localizacao">Localização</NavigationLink>
 
-                <Link to="/contato">Contato</Link>
+                <NavigationLink className="NavLink" activeClassName="NavLinkSelected" to="/contato">Contato</NavigationLink>
 
           </NavigationBar>
         </Header>
