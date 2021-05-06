@@ -19,7 +19,7 @@ const TituloPagina = styled.h1`
   font-style: italic;
   color: rgba(255,255,255,1);
   text-shadow: 1px 1px 1px rgba(133,56,155,1);
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(33,165,58,0.3);
   width: 100%;
   min-height: 7rem;
   text-align: center;
@@ -168,7 +168,7 @@ function Home() {
         
       </ContainerCard>
     </Container>
-      
+      <Espacador/>
     </>
   )
 }
