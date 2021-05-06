@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/serradocipoprs/static/css/main.8a628140.chunk.css",
-    "main.js": "/serradocipoprs/static/js/main.850f7605.chunk.js",
-    "main.js.map": "/serradocipoprs/static/js/main.850f7605.chunk.js.map",
+    "main.js": "/serradocipoprs/static/js/main.a7733311.chunk.js",
+    "main.js.map": "/serradocipoprs/static/js/main.a7733311.chunk.js.map",
     "runtime-main.js": "/serradocipoprs/static/js/runtime-main.2afa5cb2.js",
     "runtime-main.js.map": "/serradocipoprs/static/js/runtime-main.2afa5cb2.js.map",
-    "static/js/2.aab77785.chunk.js": "/serradocipoprs/static/js/2.aab77785.chunk.js",
-    "static/js/2.aab77785.chunk.js.map": "/serradocipoprs/static/js/2.aab77785.chunk.js.map",
+    "static/js/2.0f0cc1a2.chunk.js": "/serradocipoprs/static/js/2.0f0cc1a2.chunk.js",
+    "static/js/2.0f0cc1a2.chunk.js.map": "/serradocipoprs/static/js/2.0f0cc1a2.chunk.js.map",
     "index.html": "/serradocipoprs/index.html",
     "static/css/main.8a628140.chunk.css.map": "/serradocipoprs/static/css/main.8a628140.chunk.css.map",
-    "static/js/2.aab77785.chunk.js.LICENSE.txt": "/serradocipoprs/static/js/2.aab77785.chunk.js.LICENSE.txt"
+    "static/js/2.0f0cc1a2.chunk.js.LICENSE.txt": "/serradocipoprs/static/js/2.0f0cc1a2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2afa5cb2.js",
-    "static/js/2.aab77785.chunk.js",
+    "static/js/2.0f0cc1a2.chunk.js",
     "static/css/main.8a628140.chunk.css",
-    "static/js/main.850f7605.chunk.js"
+    "static/js/main.a7733311.chunk.js"
   ]
 }
