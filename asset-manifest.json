@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/serradocipoprs/static/css/main.2b6edebf.chunk.css",
-    "main.js": "/serradocipoprs/static/js/main.913c33d2.chunk.js",
-    "main.js.map": "/serradocipoprs/static/js/main.913c33d2.chunk.js.map",
+    "main.js": "/serradocipoprs/static/js/main.a6bc2d5e.chunk.js",
+    "main.js.map": "/serradocipoprs/static/js/main.a6bc2d5e.chunk.js.map",
     "runtime-main.js": "/serradocipoprs/static/js/runtime-main.2afa5cb2.js",
     "runtime-main.js.map": "/serradocipoprs/static/js/runtime-main.2afa5cb2.js.map",
     "static/js/2.d6df37c2.chunk.js": "/serradocipoprs/static/js/2.d6df37c2.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.2afa5cb2.js",
     "static/js/2.d6df37c2.chunk.js",
     "static/css/main.2b6edebf.chunk.css",
-    "static/js/main.913c33d2.chunk.js"
+    "static/js/main.a6bc2d5e.chunk.js"
   ]
 }
