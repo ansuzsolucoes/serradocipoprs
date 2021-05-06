@@ -19,17 +19,26 @@ const TituloPagina = styled.h1`
   font-style: italic;
   color: rgba(255,255,255,1);
   text-shadow: 1px 1px 1px rgba(133,56,155,1);
+  background-color: rgba(0,0,0,0.3);
+  width: 100%;
+  min-height: 7rem;
+  text-align: center;
 `;
-const Header = styled.div `
-
+  const Header = styled.div `
   width: 100%;
   min-height: 527px;
   justify-content: center;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-
+  z-index: 5;
 `;
+
+const Banner = styled.img`
+width: 100%;
+max-height: 500px;
+object-fit: cover;
+`
 
 const NavigationBar = styled.nav `
 display: inline-flex;
@@ -56,6 +65,36 @@ font-family: "Roboto", "Open Sans", "Helvetica Neue", "Helvetica", "sans-serif";
 font-size: 20px;
 `;
 
+const Container = styled.div`
+  padding: 0 10% 0 10%;
+`
+
+const Espacador = styled.hr`
+  height: 2rem;
+  border: none;
+`
+const ContainerCard = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 45%;
+`
+const TituloCard = styled.h2`
+  font-size: 3rem;
+  font-weight: 600;
+`
+const SubtituloCard = styled.h3`
+  font-size: 2.5rem;
+  font-weight: 400;
+`
+
+const publico = process.env.PUBLIC_URL
+
+let banner = publico + "/img/banner.jpg"
+
 
 
 function App() {
@@ -67,6 +106,7 @@ function App() {
       <Router>
         <Header>
           <TituloPagina>Pousada Recanto do Sossego</TituloPagina>
+          <Banner src={banner} />
           <br/>
           <NavigationBar>
 
@@ -108,7 +148,27 @@ export default App;
 function Home() {
   return (
     <>
-      <h1>Home Funcionando</h1>
+    <Container>
+      <Espacador/>
+      <ContainerCard>
+        <Card>
+          <img src={publico + '/img/7.jpg'}></img>
+          <TituloCard>SIMPLICIDADE E CONFORTO</TituloCard>
+          <SubtituloCard>TRANQUILIDADE PARA O CORPO E A MENTE</SubtituloCard>
+          <p>Longe do barulho e stress da cidade grande, aqui, podemos aproveitar uma estadia relaxante, com a simplicidade  do interior e o conforto necessário para nosso descanso.</p>
+        </Card> 
+        <Espacador/>
+        <Card>
+          <img src={publico + '/img/7.jpg'}></img>
+          <TituloCard>SIMPLICIDADE E CONFORTO</TituloCard>
+          <SubtituloCard>TRANQUILIDADE PARA O CORPO E A MENTE</SubtituloCard>
+          <p>Longe do barulho e stress da cidade grande, aqui, podemos aproveitar uma estadia relaxante, com a simplicidade  do interior e o conforto necessário para nosso descanso.</p>
+        </Card>
+        
+        
+      </ContainerCard>
+    </Container>
+      
     </>
   )
 }
