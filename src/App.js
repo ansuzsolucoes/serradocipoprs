@@ -6,7 +6,7 @@ import {
   NavLink
 } from "react-router-dom";
 import styled from 'styled-components';
-import "./App.css";
+import {LocalPhone, WhatsApp} from "@material-ui/icons";
 
 // const theme = {
 //   blue: {
@@ -108,6 +108,7 @@ const ContainerCard = styled.div`
 const Card = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: start;
   max-width: 45%;
   @media(max-width: 700px){
     max-width: 100%;
@@ -208,9 +209,10 @@ const ColunaImagem = styled.div`
 `
 
 const ImgImagem = styled.img`
-  width: 100%;
-  height: auto;
+  width: ${props => props.largura || '100%'};
+  max-height: ${props => props.altura || 'auto'};
   margin: 50px;
+  overflow: hidden;
 `
 
 const Button = styled.button`
@@ -304,13 +306,13 @@ function Home() {
           <Card>
             <img src={publico + '/img/8.jpg'} alt="" />
             <TituloCard>CONSTRUIDO PARA VOCÊ</TituloCard>
-            
+
             <SubtituloCard>INSTALAÇÕES CONSTRUÍDAS PARA AGRADAR</SubtituloCard>
             <TextCard>Desde os quartos até a área da churrasqueira, tudo foi planejado de forma a agradar os hóspedes. O ambiente é mais que uma pousada, é como uma segunda casa </TextCard>
           </Card>
         </ContainerCard>
       </Container>
-      <Espacador/>
+      <Espacador />
       <Coluna backgroundColor="#000" altura="100px">
         <ContainerColuna>
           <ColunaMenor>
@@ -324,7 +326,7 @@ function Home() {
               A pousada está em atividade desde 1999. Seu proprietário, Narcizo Raimundo da Silva, morador no local, viu em seu sítio um local relaxante e agradável para construí-la de forma a compartilhar isso com outras pessoas. A pusada, recebe vários hóspedes de diversos lugares que vêm em busca de sossego,  descanso e lazer.
           </TextColuna>
             <ColunaLink to="/sobre">Leia Mais</ColunaLink>
-            <Espacador/>
+            <Espacador />
             <TituloColuna textColor="#fff">
               Mais que uma Pousada
             </TituloColuna>
@@ -332,11 +334,11 @@ function Home() {
               Aqui, Fazemos Amigos
             </SubtituloColuna>
             <TextColuna textColor="#fff">
-            As pessoas que passam por aqui são mais  que hóspedes, são amigos. Já os que estão por vir são os amigos que ainda não conhecemos.
+              As pessoas que passam por aqui são mais  que hóspedes, são amigos. Já os que estão por vir são os amigos que ainda não conhecemos.
             </TextColuna>
             <ColunaLink textColor="#fff" to="/sobre">Leia Mais</ColunaLink>
           </ColunaMenor>
-          <Espacador/>
+          <Espacador />
           <ColunaMaior>
             <iframe title="GoogleMaps" src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d29793.063134277276!2d-43.64654747802237!3d-19.39795712076952!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-19.3754968!2d-43.6611626!4m5!1s0xa5e8ac82f05065%3A0xdb581dfb8008d5e6!2sUnnamed%20Rd%2C%20Jaboticatubas%20-%20MG%2C%2035830-000%2C%20Brasil!3m2!1d-19.403034299999998!2d-43.632829099999995!5e1!3m2!1spt-BR!2sbr!4v1620310519277!5m2!1spt-BR!2sbr" width="600" height="450" style={{ border: 0 }} allowFullscreen="" loading="lazy"></iframe>
           </ColunaMaior>
@@ -345,17 +347,17 @@ function Home() {
       <Coluna altura="200px">
         <ContainerColuna>
           <ColunaMaior>
-          <div className="zoom"><img src={publico + "/img/rede.jpg"} alt=""/></div>
-            </ColunaMaior>
-            <Espacador/>
+            <div className="zoom"><img src={publico + "/img/rede.jpg"} alt="" /></div>
+          </ColunaMaior>
+          <Espacador />
           <ColunaMenor>
             <TituloColuna>
-            ACORDE COM A NATUREZA À SUA PORTA
+              ACORDE COM A NATUREZA À SUA PORTA
           </TituloColuna>
             <SubtituloColuna>
-            Todos os apartamentos se abrem diretamente para a natureza. Sinta o prazer de respirar ar puro.
+              Todos os apartamentos se abrem diretamente para a natureza. Sinta o prazer de respirar ar puro.
           </SubtituloColuna>
-          <NavLink to="/instalacoes"><Button>Conheça</Button></NavLink>
+            <NavLink to="/instalacoes"><Button>Conheça</Button></NavLink>
           </ColunaMenor>
         </ContainerColuna>
       </Coluna>
@@ -368,87 +370,87 @@ function Sobre() {
   return (
     <>
       <Container>
-        <Espacador/>
-        <div  style={{textAlign: 'center'}}>
-          <img src={publico+"/img/placa.jpg"} alt=""></img>
+        <Espacador />
+        <div style={{ textAlign: 'center' }}>
+          <img src={publico + "/img/placa.jpg"} alt=""></img>
         </div>
-        <Espacador/>
+        <Espacador />
         <Coluna>
           <ContainerColuna>
             <ColunaMaior>
               <TextColuna>
-              Na pousada, quem chega sente cheiro de mato, ouve a barulhada gostosa dos animais nativos, descansa os olhos numa paisagem ímpar, pode nadar numa piscina onde corre água natural, relaxar na sauna,  bater uma bola, fazer o prórpio churrasco na beira da piscina (traga sua carne, a  cerveja gelada nós  vendemos)
+                Na pousada, quem chega sente cheiro de mato, ouve a barulhada gostosa dos animais nativos, descansa os olhos numa paisagem ímpar, pode nadar numa piscina onde corre água natural, relaxar na sauna,  bater uma bola, fazer o prórpio churrasco na beira da piscina (traga sua carne, a  cerveja gelada nós  vendemos)
               </TextColuna>
             </ColunaMaior>
-            <Espacador/>
+            <Espacador />
             <ColunaMenor>
-            <NavLink to="/instalacoes"><Button>Conheça</Button></NavLink>
+              <NavLink to="/instalacoes"><Button>Conheça</Button></NavLink>
             </ColunaMenor>
           </ContainerColuna>
         </Coluna>
         <TituloCard>Petiscos e tira-gostos</TituloCard>
-        <Espacador/>
+        <Espacador />
         <SubtituloCard>Temos a famosa Traíra sem espinha</SubtituloCard>
         <ColunaImagem>
-          <ImgImagem src={publico + "/img/tilapia1.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/tilapia1.jpg"} alt="" />
 
-          <ImgImagem src={publico + "/img/tilapia2.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/tilapia2.jpg"} alt="" />
         </ColunaImagem>
-        <Espacador/>
+        <Espacador />
         <SubtituloCard>Temos Tropeiro e Pizza caseira</SubtituloCard>
         <ColunaImagem>
-          <ImgImagem src={publico + "/img/tropeiro.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/tropeiro.jpg"} alt="" />
 
-          <ImgImagem src={publico + "/img/pizza.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/pizza.jpg"} alt="" />
         </ColunaImagem>
 
         <SubtituloCard>Temos Refeições Caseira</SubtituloCard>
         <ColunaImagem>
-          <ImgImagem src={publico + "/img/refeicao1.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/refeicao1.jpg"} alt="" />
 
-          <ImgImagem src={publico + "/img/refeicao2.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/refeicao2.jpg"} alt="" />
         </ColunaImagem>
 
         <SubtituloCard>Temos Tropeiro e Pizza caseira</SubtituloCard>
         <ColunaImagem>
-          <ImgImagem src={publico + "/img/tilapia1.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/tilapia1.jpg"} alt="" />
 
-          <ImgImagem src={publico + "/img/tilapia2.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/tilapia2.jpg"} alt="" />
         </ColunaImagem>
 
         <SubtituloCard>Temos Café da Manhã com gostinho do interior</SubtituloCard>
         <ColunaImagem>
-          <ImgImagem src={publico + "/img/cafe1.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/cafe1.jpg"} alt="" />
 
-          <ImgImagem src={publico + "/img/cafe2.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/cafe2.jpg"} alt="" />
         </ColunaImagem>
 
         <ColunaImagem>
-          <ImgImagem src={publico + "/img/cafe3.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/cafe3.jpg"} alt="" />
 
-          <ImgImagem src={publico + "/img/cafe4.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/cafe4.jpg"} alt="" />
         </ColunaImagem>
-        <Espacador/>
+        <Espacador />
         <ColunaImagem>
-          <ImgImagem src={publico + "/img/cafe5.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/cafe5.jpg"} alt="" />
 
-          <ImgImagem src={publico + "/img/cafe6.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/cafe6.jpg"} alt="" />
         </ColunaImagem>
-        <Espacador/>
-        <SubtituloCard>Temos Tropeiro e Pizza caseira</SubtituloCard>
+        <Espacador />
+
         <ColunaImagem>
-          <ImgImagem src={publico + "/img/tilapia1.jpg"} alt=""/>
-
-          <ImgImagem src={publico + "/img/tilapia2.jpg"} alt=""/>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/xNSnxYwAGGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <Espacador />
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/nlijD0c_rR8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </ColunaImagem>
-        <Espacador/>
-        <SubtituloCard>Temos Tropeiro e Pizza caseira</SubtituloCard>
+        <Espacador />
+
         <ColunaImagem>
-          <ImgImagem src={publico + "/img/tilapia1.jpg"} alt=""/>
-
-          <ImgImagem src={publico + "/img/tilapia2.jpg"} alt=""/>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/McvZoa0tZxo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <Espacador />
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/wlkk006QH6A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </ColunaImagem>
-        <Espacador/>
+        <Espacador />
       </Container>
     </>
   )
@@ -457,7 +459,49 @@ function Sobre() {
 function Instalacoes() {
   return (
     <>
-      
+      <Container>
+        <Espacador />
+        <div style={{ textAlign: 'center' }}>
+          <img src={publico + "/img/isnt.jpg"} alt=""></img>
+        </div>
+        <Espacador />
+        <Coluna>
+          <ContainerColuna>
+            <TituloColuna>
+              Nossas instalações são aconchegantes para trazer paz de espírito e calma na estadia.
+              </TituloColuna>
+            <Espacador />
+
+          </ContainerColuna>
+        </Coluna>
+        <TituloCard>Petiscos e tira-gostos</TituloCard>
+        <Espacador />
+        <ColunaImagem>
+          <ImgImagem src={publico + "/img/inst2.jpg"} alt="" />
+
+          <ImgImagem src={publico + "/img/inst3.jpg"} alt="" />
+        </ColunaImagem>
+        <Espacador />
+        <ColunaImagem>
+          <ImgImagem src={publico + "/img/inst4.jpg"} alt="" />
+
+          <ImgImagem altura="450px" src={publico + "/img/inst5.jpeg"} alt="" />
+        </ColunaImagem>
+
+        <ColunaImagem>
+          <ImgImagem altura="450px" src={publico + "/img/inst6.jpeg"} alt="" />
+
+          <ImgImagem src={publico + "/img/inst.jpg"} alt="" />
+        </ColunaImagem>
+
+        <ColunaImagem>
+          <ImgImagem src={publico + "/img/inst7.jpg"} alt="" />
+
+          <ImgImagem src={publico + "/img/inst8.jpg"} alt="" />
+        </ColunaImagem>
+
+
+      </Container>
     </>
   )
 }
@@ -465,7 +509,39 @@ function Instalacoes() {
 function Localizacao() {
   return (
     <>
-      <h1>Localização Funcionando</h1>
+      <Container>
+        <Espacador />
+        <TituloColuna>
+          COMO CHEGAR?
+        </TituloColuna>
+        <SubtituloColuna>
+          Assista ao vídeo abaixo
+        </SubtituloColuna>
+        <Espacador />
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/fhxlfOn96tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <Espacador />
+        <TituloColuna>
+          Localização
+      </TituloColuna>
+        <SubtituloColuna>
+          ÁREA DE PRESERVAÇÃO AMBIENTAL<br />E CIRCUITO TURÍSTICO
+      </SubtituloColuna>
+        <Espacador />
+        <ImgImagem src={publico + "/img/mapa.jpg"} />
+        <TextColuna>
+          Situada aos pés da Serra do Cipó, dentro da área de preservação, o terreno onde foi construida a Pousada Recanto do Sossego se extende pelas encostas íngremes e adentra o planalto.
+        </TextColuna>
+        <Espacador/>
+        <TextColuna>
+        A região, além de fazer parte do parque estadual da Serra do Cipó, também é conhecida como pertencente ao complexo turístico da Estrada Real.
+        </TextColuna>
+        <ImgImagem altura="400px" largura="alto" src={publico + "/img/mapa2.jpg"}/>
+        <Espacador/>
+        <iframe title="GoogleMaps" src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d29793.063134277276!2d-43.64654747802237!3d-19.39795712076952!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-19.3754968!2d-43.6611626!4m5!1s0xa5e8ac82f05065%3A0xdb581dfb8008d5e6!2sUnnamed%20Rd%2C%20Jaboticatubas%20-%20MG%2C%2035830-000%2C%20Brasil!3m2!1d-19.403034299999998!2d-43.632829099999995!5e1!3m2!1spt-BR!2sbr!4v1620310519277!5m2!1spt-BR!2sbr" width="600" height="450" style={{ border: 0 }} allowFullscreen="" loading="lazy"></iframe>
+        <TextColuna>Estrada Lapinha Casa Nova - Zona Rual - Serra do Cipó MG</TextColuna>
+        <Espacador/>
+      </Container>
+
     </>
   )
 }
@@ -473,7 +549,30 @@ function Localizacao() {
 function Contato() {
   return (
     <>
-      <h1>Contato Funcionando</h1>
+      <Container>
+        <Espacador/>
+        <ContainerCard>
+        <Card>
+          <TituloCard>Localização</TituloCard>
+          <TextCard>Serra do Cipó</TextCard>
+          <TextCard>Primeira entrada à direita após Restaurante Coqueiros na rodovia MG10 km 90,5 - 5km de estrada de terra até a pousada.</TextCard>
+        </Card>
+        <Espacador/>
+        <Card>
+          <TituloCard>TELEFONES</TituloCard>
+          <TextCard><LocalPhone/> +55 (31) 3799-3533 </TextCard>
+          <TextCard><LocalPhone/> +55 (31) 9 8673-8025</TextCard>
+          <TextCard><WhatsApp/> +55 (31) 9 8418-5776</TextCard>
+          <TextCard><LocalPhone/> +55 (31) 9 8448-1219</TextCard>
+          <TextCard><LocalPhone/> +55 (31) 4101-0527</TextCard>
+        </Card>
+        </ContainerCard>
+        <Espacador/>
+        <iframe title="GoogleMaps" src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d29793.063134277276!2d-43.64654747802237!3d-19.39795712076952!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-19.3754968!2d-43.6611626!4m5!1s0xa5e8ac82f05065%3A0xdb581dfb8008d5e6!2sUnnamed%20Rd%2C%20Jaboticatubas%20-%20MG%2C%2035830-000%2C%20Brasil!3m2!1d-19.403034299999998!2d-43.632829099999995!5e1!3m2!1spt-BR!2sbr!4v1620310519277!5m2!1spt-BR!2sbr" width="600" height="450" style={{ border: 0 }} allowFullscreen="" loading="lazy"></iframe>
+        <Espacador/>
+        
+      </Container>
+
     </>
   )
 }
