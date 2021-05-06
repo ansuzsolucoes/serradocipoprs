@@ -8,16 +8,16 @@ import {
 import styled from 'styled-components';
 import "./App.css";
 
-const theme = {
-  blue: {
-    default: "#3f51b5",
-    hover: "#283593"
-  },
-  pink: {
-    default: "#e91e63",
-    hover: "#ad1457"
-  }
-};
+// const theme = {
+//   blue: {
+//     default: "#3f51b5",
+//     hover: "#283593"
+//   },
+//   pink: {
+//     default: "#e91e63",
+//     hover: "#ad1457"
+//   }
+// };
 
 
 const TituloPagina = styled.h1`
@@ -101,11 +101,17 @@ const Espacador = styled.hr`
 const ContainerCard = styled.div`
   display: flex;
   flex-direction: row;
+  @media(max-width: 700px){
+    flex-direction: column;
+  }
 `
 const Card = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 45%;
+  @media(max-width: 700px){
+    max-width: 100%;
+  }
 `
 const TituloCard = styled.h2`
   font-family: "Roboto", "Open Sans", "Helvetica Neue", "Helvetica", "sans-serif";
@@ -127,6 +133,7 @@ const SubtituloCard = styled.h3`
   color: rgba(34,34,34,1);
   letter-spacing: normal;
   line-height: 1.2;
+  text-align: center;
 `
 const TextCard = styled.p`
   text-align: justify;
@@ -140,17 +147,26 @@ const Coluna = styled.div`
 const ContainerColuna = styled(Container)`
   display: flex;
   flex-direction: row;
+  @media(max-width: 700px){
+    flex-direction: column;
+  }
 `
 const ColunaMenor = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 35%;
+  @media(max-width: 700px){
+    max-width: 100%;
+  }
 `
 
 const ColunaMaior = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 60%;
+  @media(max-width: 700px){
+    max-width: 100%;
+  }
 `
 const TituloColuna = styled(TituloCard)`
   color: ${props => props.textColor};
@@ -181,6 +197,20 @@ font-size: 20px;
 }
 
 `;
+
+const ColunaImagem = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  @media(max-width: 700px){
+    flex-direction: column;
+  }
+`
+
+const ImgImagem = styled.img`
+  width: 100%;
+  height: 100%;
+`
 
 const Button = styled.button`
   background-color: rgba(33,165,58,0.8);
@@ -222,7 +252,7 @@ function App() {
           <br />
           <NavigationBar>
 
-            <NavigationLink className="NavLink" exact="true" activeClassName="NavLinkSelected" to="/" >A Pousada</NavigationLink>
+            <NavigationLink className="NavLink" exact={true} activeClassName="NavLinkSelected" to="/" >A Pousada</NavigationLink>
 
             <NavigationLink className="NavLink" activeClassName="NavLinkSelected" to="/sobre">Sobre Nós</NavigationLink>
 
@@ -307,14 +337,14 @@ function Home() {
           </ColunaMenor>
           <Espacador/>
           <ColunaMaior>
-            <iframe title="GoogleMaps" src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d29793.063134277276!2d-43.64654747802237!3d-19.39795712076952!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-19.3754968!2d-43.6611626!4m5!1s0xa5e8ac82f05065%3A0xdb581dfb8008d5e6!2sUnnamed%20Rd%2C%20Jaboticatubas%20-%20MG%2C%2035830-000%2C%20Brasil!3m2!1d-19.403034299999998!2d-43.632829099999995!5e1!3m2!1spt-BR!2sbr!4v1620310519277!5m2!1spt-BR!2sbr" width="600" height="450" style={{ border: 0 }} allowfullscreen="" loading="lazy"></iframe>
+            <iframe title="GoogleMaps" src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d29793.063134277276!2d-43.64654747802237!3d-19.39795712076952!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-19.3754968!2d-43.6611626!4m5!1s0xa5e8ac82f05065%3A0xdb581dfb8008d5e6!2sUnnamed%20Rd%2C%20Jaboticatubas%20-%20MG%2C%2035830-000%2C%20Brasil!3m2!1d-19.403034299999998!2d-43.632829099999995!5e1!3m2!1spt-BR!2sbr!4v1620310519277!5m2!1spt-BR!2sbr" width="600" height="450" style={{ border: 0 }} allowFullscreen="" loading="lazy"></iframe>
           </ColunaMaior>
         </ContainerColuna>
       </Coluna>
       <Coluna altura="200px">
         <ContainerColuna>
           <ColunaMaior>
-          <div class="zoom"><img src={publico + "/img/rede.jpg"}/></div>
+          <div className="zoom"><img src={publico + "/img/rede.jpg"} alt=""/></div>
             </ColunaMaior>
             <Espacador/>
           <ColunaMenor>
@@ -333,10 +363,60 @@ function Home() {
   )
 }
 
+function Sobre() {
+  return (
+    <>
+      <Container>
+        <Espacador/>
+        <div  style={{textAlign: 'center'}}>
+          <img src={publico+"/img/placa.jpg"} alt=""></img>
+        </div>
+        <Espacador/>
+        <Coluna>
+          <ContainerColuna>
+            <ColunaMaior>
+              <TextColuna>
+              Na pousada, quem chega sente cheiro de mato, ouve a barulhada gostosa dos animais nativos, descansa os olhos numa paisagem ímpar, pode nadar numa piscina onde corre água natural, relaxar na sauna,  bater uma bola, fazer o prórpio churrasco na beira da piscina (traga sua carne, a  cerveja gelada nós  vendemos)
+              </TextColuna>
+            </ColunaMaior>
+            <Espacador/>
+            <ColunaMenor>
+            <NavLink to="/instalacoes"><Button>Conheça</Button></NavLink>
+            </ColunaMenor>
+          </ContainerColuna>
+        </Coluna>
+        <TituloCard>Petiscos e tira-gostos</TituloCard>
+        <Espacador/>
+        <SubtituloCard>Temos a famosa Traíra sem espinha</SubtituloCard>
+        <ColunaImagem>
+          <img src={publico + "/img/tilapia1.jpg"} alt=""/>
+          <Espacador/>
+          <img src={publico + "/img/tilapia2.jpg"} alt=""/>
+        </ColunaImagem>
+        <Espacador/>
+        <SubtituloCard>Temos Tropeiro e Pizza caseira</SubtituloCard>
+        <ColunaImagem>
+          <img src={publico + "/img/tilapia1.jpg"} alt=""/>
+          <Espacador/>
+          <img src={publico + "/img/tilapia2.jpg"} alt=""/>
+        </ColunaImagem>
+        <Espacador/>
+        <SubtituloCard>Temos Tropeiro e Pizza caseira</SubtituloCard>
+        <ColunaImagem>
+          <img src={publico + "/img/tilapia1.jpg"} alt=""/>
+          <Espacador/>
+          <img src={publico + "/img/tilapia2.jpg"} alt=""/>
+        </ColunaImagem>
+        <Espacador/>
+      </Container>
+    </>
+  )
+}
+
 function Instalacoes() {
   return (
     <>
-      <h1>Instalações Funcionando</h1>
+      
     </>
   )
 }
@@ -357,10 +437,3 @@ function Contato() {
   )
 }
 
-function Sobre() {
-  return (
-    <>
-      <h1>Sobre Funcionando</h1>
-    </>
-  )
-}
