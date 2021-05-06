@@ -209,7 +209,8 @@ const ColunaImagem = styled.div`
 
 const ImgImagem = styled.img`
   width: 100%;
-  height: 100%;
+  height: auto;
+  margin: 50px;
 `
 
 const Button = styled.button`
@@ -389,23 +390,63 @@ function Sobre() {
         <Espacador/>
         <SubtituloCard>Temos a famosa Traíra sem espinha</SubtituloCard>
         <ColunaImagem>
-          <img src={publico + "/img/tilapia1.jpg"} alt=""/>
-          <Espacador/>
-          <img src={publico + "/img/tilapia2.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/tilapia1.jpg"} alt=""/>
+
+          <ImgImagem src={publico + "/img/tilapia2.jpg"} alt=""/>
         </ColunaImagem>
         <Espacador/>
         <SubtituloCard>Temos Tropeiro e Pizza caseira</SubtituloCard>
         <ColunaImagem>
-          <img src={publico + "/img/tilapia1.jpg"} alt=""/>
-          <Espacador/>
-          <img src={publico + "/img/tilapia2.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/tropeiro.jpg"} alt=""/>
+
+          <ImgImagem src={publico + "/img/pizza.jpg"} alt=""/>
+        </ColunaImagem>
+
+        <SubtituloCard>Temos Refeições Caseira</SubtituloCard>
+        <ColunaImagem>
+          <ImgImagem src={publico + "/img/refeicao1.jpg"} alt=""/>
+
+          <ImgImagem src={publico + "/img/refeicao2.jpg"} alt=""/>
+        </ColunaImagem>
+
+        <SubtituloCard>Temos Tropeiro e Pizza caseira</SubtituloCard>
+        <ColunaImagem>
+          <ImgImagem src={publico + "/img/tilapia1.jpg"} alt=""/>
+
+          <ImgImagem src={publico + "/img/tilapia2.jpg"} alt=""/>
+        </ColunaImagem>
+
+        <SubtituloCard>Temos Café da Manhã com gostinho do interior</SubtituloCard>
+        <ColunaImagem>
+          <ImgImagem src={publico + "/img/cafe1.jpg"} alt=""/>
+
+          <ImgImagem src={publico + "/img/cafe2.jpg"} alt=""/>
+        </ColunaImagem>
+
+        <ColunaImagem>
+          <ImgImagem src={publico + "/img/cafe3.jpg"} alt=""/>
+
+          <ImgImagem src={publico + "/img/cafe4.jpg"} alt=""/>
+        </ColunaImagem>
+        <Espacador/>
+        <ColunaImagem>
+          <ImgImagem src={publico + "/img/cafe5.jpg"} alt=""/>
+
+          <ImgImagem src={publico + "/img/cafe6.jpg"} alt=""/>
         </ColunaImagem>
         <Espacador/>
         <SubtituloCard>Temos Tropeiro e Pizza caseira</SubtituloCard>
         <ColunaImagem>
-          <img src={publico + "/img/tilapia1.jpg"} alt=""/>
-          <Espacador/>
-          <img src={publico + "/img/tilapia2.jpg"} alt=""/>
+          <ImgImagem src={publico + "/img/tilapia1.jpg"} alt=""/>
+
+          <ImgImagem src={publico + "/img/tilapia2.jpg"} alt=""/>
+        </ColunaImagem>
+        <Espacador/>
+        <SubtituloCard>Temos Tropeiro e Pizza caseira</SubtituloCard>
+        <ColunaImagem>
+          <ImgImagem src={publico + "/img/tilapia1.jpg"} alt=""/>
+
+          <ImgImagem src={publico + "/img/tilapia2.jpg"} alt=""/>
         </ColunaImagem>
         <Espacador/>
       </Container>
