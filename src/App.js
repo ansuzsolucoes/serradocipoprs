@@ -8,6 +8,18 @@ import {
 import styled from 'styled-components';
 import "./App.css";
 
+const theme = {
+  blue: {
+    default: "#3f51b5",
+    hover: "#283593"
+  },
+  pink: {
+    default: "#e91e63",
+    hover: "#ad1457"
+  }
+};
+
+
 const TituloPagina = styled.h1`
   font-family: "Pacifico", "Open Sans","Helvetica Neue", "Helvetica", "sans-serif";
   font-size: 67px;
@@ -63,6 +75,19 @@ padding: 25px 15px 25px 15px;
 margin: 0;
 font-family: "Roboto", "Open Sans", "Helvetica Neue", "Helvetica", "sans-serif";
 font-size: 20px;
+&:link{
+  color: #fff;
+}
+&:hover{
+  color: #fff;
+}
+&:active{
+  color: #fff;
+}
+&:visited{
+  color: #fff;
+}
+
 `;
 
 const Container = styled.div`
@@ -83,15 +108,29 @@ const Card = styled.div`
   max-width: 45%;
 `
 const TituloCard = styled.h2`
-  font-size: 3rem;
-  font-weight: 600;
+  font-family: "Roboto", "Open Sans", "Helvetica Neue", "Helvetica", "sans-serif";
+  font-style: normal;
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgba(34,34,34,1);
+  letter-spacing: normal;
+  line-height: 1.2;
+  text-align: center;
 `
 const SubtituloCard = styled.h3`
-  font-size: 2.5rem;
-  font-weight: 400;
+  font-family: "Roboto", "Open Sans", "Helvetica Neue", "Helvetica", "sans-serif";
+  font-style: normal;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+  color: rgba(34,34,34,1);
+  letter-spacing: normal;
+  line-height: 1.2;
 `
 const TextCard = styled.p`
-
+  text-align: justify;
+  line-height: 1.8;
 `
 const Coluna = styled.div`
   background-color: ${props => props.backgroundColor};
@@ -128,7 +167,41 @@ padding: 25px 15px 25px 15px;
 margin: 0;
 font-family: "Roboto", "Open Sans", "Helvetica Neue", "Helvetica", "sans-serif";
 font-size: 20px;
+&:link{
+  color: ${props => props.textColor};
+}
+&:hover{
+  color: ${props => props.textColor};
+}
+&:active{
+  color: ${props => props.textColor};
+}
+&:visited{
+  color: ${props => props.textColor};
+}
+
 `;
+
+const Button = styled.button`
+  background-color: rgba(33,165,58,0.8);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  outline: 0;
+  text-transform: uppercase;
+  margin: 10px 0px;
+  cursor: pointer;
+  box-shadow: 0px 2px 2px lightgray;
+  transition: ease background-color 250ms;
+  &:hover {
+    background-color: rgba(33,165,58,0.8);
+  }
+  &:disabled {
+    cursor: default;
+    opacity: 0.7;
+  }
+`;
+
 
 const publico = process.env.PUBLIC_URL
 
@@ -198,10 +271,11 @@ function Home() {
           </Card>
           <Espacador />
           <Card>
-            <img src={publico + '/img/7.jpg'} alt="" />
-            <TituloCard>SIMPLICIDADE E CONFORTO</TituloCard>
-            <SubtituloCard>TRANQUILIDADE PARA O CORPO E A MENTE</SubtituloCard>
-            <TextCard>Longe do barulho e stress da cidade grande, aqui, podemos aproveitar uma estadia relaxante, com a simplicidade  do interior e o conforto necessário para nosso descanso.</TextCard>
+            <img src={publico + '/img/8.jpg'} alt="" />
+            <TituloCard>CONSTRUIDO PARA VOCÊ</TituloCard>
+            
+            <SubtituloCard>INSTALAÇÕES CONSTRUÍDAS PARA AGRADAR</SubtituloCard>
+            <TextCard>Desde os quartos até a área da churrasqueira, tudo foi planejado de forma a agradar os hóspedes. O ambiente é mais que uma pousada, é como uma segunda casa </TextCard>
           </Card>
         </ContainerCard>
       </Container>
@@ -229,7 +303,7 @@ function Home() {
             <TextColuna textColor="#fff">
             As pessoas que passam por aqui são mais  que hóspedes, são amigos. Já os que estão por vir são os amigos que ainda não conhecemos.
             </TextColuna>
-            <ColunaLink to="/sobre">Leia Mais</ColunaLink>
+            <ColunaLink textColor="#fff" to="/sobre">Leia Mais</ColunaLink>
           </ColunaMenor>
           <Espacador/>
           <ColunaMaior>
@@ -237,7 +311,7 @@ function Home() {
           </ColunaMaior>
         </ContainerColuna>
       </Coluna>
-      <Coluna altura="100px">
+      <Coluna altura="200px">
         <ContainerColuna>
           <ColunaMaior>
           <div class="zoom"><img src={publico + "/img/rede.jpg"}/></div>
@@ -248,13 +322,12 @@ function Home() {
             ACORDE COM A NATUREZA À SUA PORTA
           </TituloColuna>
             <SubtituloColuna>
-            Todos os apartamentos se abrem diretamente para a natureza.
-Sinta o prazer de respirar ar puro.
+            Todos os apartamentos se abrem diretamente para a natureza. Sinta o prazer de respirar ar puro.
           </SubtituloColuna>
+          <NavLink to="/instalacoes"><Button>Conheça</Button></NavLink>
           </ColunaMenor>
         </ContainerColuna>
       </Coluna>
-
       <Espacador />
     </>
   )
