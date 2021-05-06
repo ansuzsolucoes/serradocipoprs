@@ -1,3 +1,20 @@
 .NavLink:hover, .NavLinkSelected{
     background-color: rgba(0,0,0,0.3);
 }
+
+.zoom {
+	overflow: hidden;
+}
+
+.zoom img {
+	max-width: 100%;
+	-moz-transition: all 0.8s;
+	-webkit-transition: all 0.8s;
+	transition: all 0.8s;
+}
+
+.zoom:hover img {
+	-moz-transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+}
