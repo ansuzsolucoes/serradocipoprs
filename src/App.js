@@ -34,8 +34,12 @@ const TituloPagina = styled.h1`
   text-shadow: 1px 1px 1px rgba(133,56,155,1);
   background-color: rgba(33,165,58,0.3);
   width: 100%;
-  min-height: 25vh;
   text-align: center;
+  padding-bottom: 7vh;
+  @media(max-width: 700px){
+    font-size: 12vw;
+    padding-bottom: 4vh;
+  }
 `;
 const Header = styled.div`
   width: 100%;
@@ -48,6 +52,7 @@ const Header = styled.div`
 `;
 
 const Banner = styled.img`
+background-color: rgba(33,165,58,0.3);
 width: 100%;
 max-height: 100vh;
 object-fit: cover;
@@ -241,7 +246,21 @@ const Button = styled.button`
     opacity: 0.7;
   }
 `;
-
+const ContainerFrame = styled.div`
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+`;
+const Frame = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+`;
 
 const publico = process.env.PUBLIC_URL
 
@@ -347,7 +366,10 @@ function Home() {
           </ColunaMenor>
           <Espacador />
           <ColunaMaior>
-            <iframe title="GoogleMaps" src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d29793.063134277276!2d-43.64654747802237!3d-19.39795712076952!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-19.3754968!2d-43.6611626!4m5!1s0xa5e8ac82f05065%3A0xdb581dfb8008d5e6!2sUnnamed%20Rd%2C%20Jaboticatubas%20-%20MG%2C%2035830-000%2C%20Brasil!3m2!1d-19.403034299999998!2d-43.632829099999995!5e1!3m2!1spt-BR!2sbr!4v1620310519277!5m2!1spt-BR!2sbr" width="600" height="450" style={{ border: 0 }} allowFullscreen="" loading="lazy"></iframe>
+          <ContainerFrame>
+          <Frame title="GoogleMaps" src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d29793.063134277276!2d-43.64654747802237!3d-19.39795712076952!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-19.3754968!2d-43.6611626!4m5!1s0xa5e8ac82f05065%3A0xdb581dfb8008d5e6!2sUnnamed%20Rd%2C%20Jaboticatubas%20-%20MG%2C%2035830-000%2C%20Brasil!3m2!1d-19.403034299999998!2d-43.632829099999995!5e1!3m2!1spt-BR!2sbr!4v1620310519277!5m2!1spt-BR!2sbr" style={{ border: 0 }} allowFullscreen="" loading="lazy"></Frame>
+        </ContainerFrame>
+            
           </ColunaMaior>
         </ContainerColuna>
       </Coluna>
@@ -446,16 +468,29 @@ function Sobre() {
         <Espacador />
 
         <ColunaImagem>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/xNSnxYwAGGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <ContainerFrame>
+          <Frame src="https://www.youtube.com/embed/xNSnxYwAGGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Frame>
+          </ContainerFrame>
+          
           <Espacador />
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/nlijD0c_rR8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <ContainerFrame>
+          <Frame width="560" height="315" src="https://www.youtube.com/embed/nlijD0c_rR8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Frame>
+          </ContainerFrame>
+          
         </ColunaImagem>
         <Espacador />
 
         <ColunaImagem>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/McvZoa0tZxo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <ContainerFrame>
+          <Frame width="560" height="315" src="https://www.youtube.com/embed/McvZoa0tZxo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Frame>
+          </ContainerFrame>
+          
+          
           <Espacador />
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/wlkk006QH6A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <ContainerFrame>
+          <Frame width="560" height="315" src="https://www.youtube.com/embed/wlkk006QH6A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Frame>
+          </ContainerFrame>
+          
         </ColunaImagem>
         <Espacador />
       </Container>
@@ -525,7 +560,10 @@ function Localizacao() {
           Assista ao vídeo abaixo
         </SubtituloColuna>
         <Espacador />
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/fhxlfOn96tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <ContainerFrame>
+        <Frame src="https://www.youtube.com/embed/fhxlfOn96tY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Frame>
+        </ContainerFrame>
+        
         <Espacador />
         <TituloColuna>
           Localização
@@ -544,7 +582,10 @@ function Localizacao() {
         </TextColuna>
         <ImgImagem altura="400px" largura="auto" src={publico + "/img/mapa2.jpg"}/>
         <Espacador/>
-        <iframe title="GoogleMaps" src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d29793.063134277276!2d-43.64654747802237!3d-19.39795712076952!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-19.3754968!2d-43.6611626!4m5!1s0xa5e8ac82f05065%3A0xdb581dfb8008d5e6!2sUnnamed%20Rd%2C%20Jaboticatubas%20-%20MG%2C%2035830-000%2C%20Brasil!3m2!1d-19.403034299999998!2d-43.632829099999995!5e1!3m2!1spt-BR!2sbr!4v1620310519277!5m2!1spt-BR!2sbr" width="600" height="450" style={{ border: 0 }} allowFullscreen="" loading="lazy"></iframe>
+        <ContainerFrame>
+        <Frame title="GoogleMaps" src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d29793.063134277276!2d-43.64654747802237!3d-19.39795712076952!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-19.3754968!2d-43.6611626!4m5!1s0xa5e8ac82f05065%3A0xdb581dfb8008d5e6!2sUnnamed%20Rd%2C%20Jaboticatubas%20-%20MG%2C%2035830-000%2C%20Brasil!3m2!1d-19.403034299999998!2d-43.632829099999995!5e1!3m2!1spt-BR!2sbr!4v1620310519277!5m2!1spt-BR!2sbr" style={{ border: 0 }} allowFullscreen="" loading="lazy"></Frame>
+        </ContainerFrame>
+        
         <TextColuna>Estrada Lapinha Casa Nova - Zona Rual - Serra do Cipó MG</TextColuna>
         <Espacador/>
       </Container>
@@ -575,7 +616,10 @@ function Contato() {
         </Card>
         </ContainerCard>
         <Espacador/>
-        <iframe title="GoogleMaps" src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d29793.063134277276!2d-43.64654747802237!3d-19.39795712076952!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-19.3754968!2d-43.6611626!4m5!1s0xa5e8ac82f05065%3A0xdb581dfb8008d5e6!2sUnnamed%20Rd%2C%20Jaboticatubas%20-%20MG%2C%2035830-000%2C%20Brasil!3m2!1d-19.403034299999998!2d-43.632829099999995!5e1!3m2!1spt-BR!2sbr!4v1620310519277!5m2!1spt-BR!2sbr" width="600" height="450" style={{ border: 0 }} allowFullscreen="" loading="lazy"></iframe>
+        <ContainerFrame>
+        <Frame title="GoogleMaps" src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d29793.063134277276!2d-43.64654747802237!3d-19.39795712076952!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-19.3754968!2d-43.6611626!4m5!1s0xa5e8ac82f05065%3A0xdb581dfb8008d5e6!2sUnnamed%20Rd%2C%20Jaboticatubas%20-%20MG%2C%2035830-000%2C%20Brasil!3m2!1d-19.403034299999998!2d-43.632829099999995!5e1!3m2!1spt-BR!2sbr!4v1620310519277!5m2!1spt-BR!2sbr" style={{ border: 0 }} allowFullscreen="" loading="lazy"></Frame>
+        </ContainerFrame>
+        
         <Espacador/>
         
       </Container>
