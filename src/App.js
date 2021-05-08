@@ -261,7 +261,11 @@ const Frame = styled.iframe`
   width: 100%;
   height: 100%;
 `;
-
+const ContainerFrameMapa = styled(ContainerFrame)`
+@media(min-width: 700px){
+  min-width: 400px;
+}
+`
 const publico = process.env.PUBLIC_URL
 
 let banner = publico + "/img/banner.jpg"
@@ -366,9 +370,9 @@ function Home() {
           </ColunaMenor>
           <Espacador />
           <ColunaMaior>
-          <ContainerFrame>
+          <ContainerFrameMapa>
           <Frame title="GoogleMaps" src="https://www.google.com/maps/embed?pb=!1m22!1m8!1m3!1d29793.063134277276!2d-43.64654747802237!3d-19.39795712076952!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d-19.3754968!2d-43.6611626!4m5!1s0xa5e8ac82f05065%3A0xdb581dfb8008d5e6!2sUnnamed%20Rd%2C%20Jaboticatubas%20-%20MG%2C%2035830-000%2C%20Brasil!3m2!1d-19.403034299999998!2d-43.632829099999995!5e1!3m2!1spt-BR!2sbr!4v1620310519277!5m2!1spt-BR!2sbr" style={{ border: 0 }} allowFullscreen="" loading="lazy"></Frame>
-        </ContainerFrame>
+        </ContainerFrameMapa>
             
           </ColunaMaior>
         </ContainerColuna>
